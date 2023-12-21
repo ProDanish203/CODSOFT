@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all .2s linear;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: #031324;
+}
+.container{
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 10;
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 255, 255, .2);
+    border-left: 1px solid rgba(255, 255, 255, .2);
+    box-shadow: 5px 2px 30px rgba(255, 255, 255, 0.1);
+}
+.container .calculator{
+    position: relative;
+    display: grid;
+}
+.container .calculator .value{
+    grid-column: span 4;
+    height: 140px;
+    width: 300px;
+    text-align: right;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 40px;
+    background: transparent;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    border-right: 1px solid rgba(255, 255, 255, .2);
+}
+.container .calculator span{
+    display: grid;
+    place-items: center;
+    width: 75px;
+    height: 75px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 20px;
+    user-select: none;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    border-right: 1px solid rgba(255, 255, 255, .2);
+}
+.container .calculator span:hover{
+    transition: 0s;
+    background: rgba(255, 255, 255, 0.05);
+}
+.container .calculator span:active{
+    background: #da00ff;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+}
+.container .calculator .clear{
+    grid-column: span 2;
+    width: 150px;
+    background: rgba(255, 255, 255, 0.05);
+}
+.container .calculator .plus{
+    grid-row: span 2;
+    height: 150px;
+}
+.container .calculator .equal{
+    background: rgba(255, 255, 255, 0.05);
+}
