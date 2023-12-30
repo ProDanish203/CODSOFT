@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Health Plus"> 
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>Blogger | Explore latest content about trending topics</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="container w-100">
+            <div class="navbar-content">
+                <div class="brand-and-toggler">
+                    <a href="/" class="navbar-brand">
+                        <i class="fa-sharp fas fa-bookmark"></i>
+                        <span>Bloggers</span>
+                    </a>
+                </div>
+                <div class="navbar-links">
+                    <ul class="nav-links">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#blogs" class="nav-link">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/register.html" class="nav-link">Register</a>
+                        </li>
+                    </ul>
+                    <div class="vertical-line"></div>
+                    <button type="button" class="nav-btn nav-search-btn">
+                        <img src="assets/img/search_icon.png" alt="search_icon"/>
+                    </button>
+                    <button type="button" class="nav-btn sidebar-show-btn" id="menuBtn">
+                        <i class="fas fa-bars" id="menuBtn"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
+        <button type="button" class="sidebar-colse-btn nav-btn">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="/" class="navbar-brand">
+            <i class="fa-sharp fas fa-bookmark"></i>
+            <span>Bloggers</span>
+        </a>
+        <ul class="sidebar-nav">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="index.html#blogs" class="nav-link">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a href="/register.html" class="nav-link">Register</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- Login Form -->
+    <div class="auth-section">
+        <h1 class="auth-heading">Login</h1>
+        <div class="auth-form" id="login-form">
+
+            <input type="text" class="auth-input" placeholder="Username" name="username" id="login-username" autocomplete="off">
+
+            <input type="password" class="auth-input" placeholder="Password" name="password" id="login-password" autocomplete="off">
+
+            <button class="auth-btn publish-btn" id="login-btn">Login</button>
+
+            <p class="auth-switcher">Don't have an account? <a href="/register.html">Signup Now</a></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Made with <span class="footer-span">❤</span> by <a href="https://danish-siddiqui.vercel.app" target="_blank" class="footer-name">Danish Siddiqui</a> &copy; Copyright 2023. All rights reserved</p>
+    </footer>
+
+    <script src="login.js"></script>
+    <!-- Font Awesome CDN -->
+    <script src="https://kit.fontawesome.com/c35a4020ae.js" crossorigin="anonymous"></script>
+
+    
+</body>
+</html>

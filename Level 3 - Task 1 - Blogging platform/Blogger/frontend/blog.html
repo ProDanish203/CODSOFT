@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Health Plus"> 
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>Blogger | Explore latest content about trending topics</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="container w-100">
+            <div class="navbar-content">
+                <div class="brand-and-toggler">
+                    <a href="/" class="navbar-brand">
+                        <i class="fa-sharp fas fa-bookmark"></i>
+                        <span>Bloggers</span>
+                    </a>
+                </div>
+                <div class="navbar-links">
+                    <ul class="nav-links" id="navbar-links">
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#blogs" class="nav-link">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/login.html" class="nav-link" id="loginNavItem">Login</a>
+                        </li>
+                        <li class="nav-item" id="logoutNavItem" style="display: none;">
+                            <div class="nav-link" style="cursor: pointer;" id="logout-btn">Logout</div>
+                        </li>
+                        <div class="nav-item" id="createNavItem" style="display: none;">
+                            <button class="create-btn" id="create-btn">
+                                <i class="fas fa-plus"></i>
+                                <span>Create</span>
+                            </button>
+                        </div>
+                        
+                    </ul>
+                    <div class="vertical-line"></div>
+                    <button type="button" class="nav-btn nav-search-btn">
+                        <img src="assets/img/search_icon.png" alt="search_icon"/>
+                    </button>
+                    <button type="button" class="nav-btn sidebar-show-btn" id="menuBtn">
+                        <i class="fas fa-bars" id="menuBtn"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
+        <button type="button" class="sidebar-colse-btn nav-btn">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="/" class="navbar-brand">
+            <i class="fa-sharp fas fa-bookmark"></i>
+            <span>Bloggers</span>
+        </a>
+        <ul class="sidebar-nav">
+            <li class="nav-item">
+                <a href="/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="/" class="nav-link">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a href="/login.html" class="nav-link">Login</a>
+            </li>
+            <li class="nav-item">
+                <button class="create-btn" id="create-btn">
+                    <i class="fas fa-plus"></i>
+                    <span>Create</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Create Modal -->
+    <div class="modal-layer" id="modal-layer">
+        <div class="modal-container">
+
+            <div class="modal-header">
+                <h3>Create Blog</h3>
+                <i class="fas fa-times" id="close-modal"></i>
+            </div>
+
+            <div class="modal-body">
+                <form class="create-form">
+
+                    <input type="text" placeholder="Enter Blog Title" class="create-input create-title" id="create-title" autocomplete="off">
+
+                    <textarea name="content" id="blog-content" cols="30" rows="10" class="create-input create-content" autocomplete="off" placeholder="Enter Blog Description..."></textarea>
+
+                    <button class="publish-btn btn">Publish Blog</button>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+    <header class="header single-header" style="background: linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,0.2)), url(assets/img/banner_image.png) center/cover no-repeat;">
+        <div class="title-container">
+
+            <div class="title" style="color: #fff;">Blog Details</div>
+            <p class="title-para" style="color: #fff;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+    </header>
+    
+    <section class="singleBlog-section">
+        <div class="container">
+            <div class="section-content">
+                <div class="loader" id="loader">
+                    <img src="assets/img/loader.svg" alt="loader" />
+                </div>
+                <section class="singleBlog-section" id="single-blog-section">
+                    
+
+                    <div class="blog-single card">
+                        <div class="single-blog-upper">
+                            <div class="blog-upper-item">
+                                <i class="fas fa-comment"></i>
+                                <span id="commentCount"></span>
+                            </div>
+                            <div class="blog-upper-item">
+                                <i class="fas fa-heart"></i>
+                                <span class="reaction-value" id="reactionValue">10</span>
+                            </div>
+                        </div>
+                        <h2 class="blog-title" id="blogTitle"></h2>
+                        <p class="blog-desc" id="blogDesc"></p>
+                        <p class="author-name">Author: <span id="author-name">Danish siddiqui</span></p>
+                        <div class="blog-item-tags">
+                            <span>Popular tags: </span>
+                            <span class="blog-item-tag">Tag1</span>
+                            <span class="blog-item-tag">Tag2</span>
+                        </div>
+                    </div>
+                
+                    <div class="comments">
+                        <h2 class="heading">Comments:</h2>
+                
+                        <div class="blog-comment-list" id="commentsContainer"></div>
+                    </div>
+
+                </section>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+
+        <p>Made with <span class="footer-span">❤</span> by <a href="https://danish-siddiqui.vercel.app" target="_blank" class="footer-name">Danish Siddiqui</a> &copy; Copyright 2023. All rights reserved</p>
+  
+      </footer>
+
+    <script src="singleBlog.js"></script>
+    <!-- Font Awesome CDN -->
+    <script src="https://kit.fontawesome.com/c35a4020ae.js" crossorigin="anonymous"></script>
+
+    
+</body>
+</html>
