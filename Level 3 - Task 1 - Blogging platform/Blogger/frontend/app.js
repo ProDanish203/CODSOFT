@@ -87,7 +87,7 @@ const fetchAllBlogs = async () => {
                     
                 </div>
                 <div class="blog-item-btn">
-                    <a href="/blog.html?blogId=${blog._id}" class="blog-btn">Read More</a>
+                    <a href="blog.html?blogId=${blog._id}" class="blog-btn">Read More</a>
                 </div>
             `;
 
