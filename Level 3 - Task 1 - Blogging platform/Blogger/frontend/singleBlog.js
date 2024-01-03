@@ -76,7 +76,7 @@ const fetchBlogDetails = async () => {
         const {blog} = await blogResponse.json();
 
         document.getElementById('commentCount').textContent = blog.comments.length;
-        document.getElementById('reactionValue').textContent = blog.reactions;
+        document.getElementById('reactionValue').textContent = '10';
         document.getElementById('blogTitle').textContent = blog.title;
         document.getElementById('blogDesc').textContent = blog.content;
         document.getElementById('author-name').textContent = blog.author.username;
@@ -106,6 +106,7 @@ fetchBlogDetails();
 
 // Modal
 const createBtn = document.getElementById("create-btn");
+const createBtnMobile = document.getElementById("create-btn-sidebar");
 const modalLayer = document.getElementById("modal-layer");
 const closeModalBtn = document.getElementById("close-modal");
 
@@ -113,10 +114,17 @@ closeModalBtn.addEventListener("click", () => modalLayer.classList.remove("open"
 
 createBtn.addEventListener("click", () => {
     if (modalLayer.classList.contains("open")) 
-    modalLayer.classList.remove("open");
+        modalLayer.classList.remove("open");
     else
         modalLayer.classList.add("open")
-})
+});
+
+createBtnMobile.addEventListener("click", () => {
+    if (modalLayer.classList.contains("open")) 
+        modalLayer.classList.remove("open");
+    else
+        modalLayer.classList.add("open")
+});
 
 // Create New Blog
 const createBlog = async () => {
@@ -130,7 +138,7 @@ const createBlog = async () => {
         if(!title) return alert("Title is required");
         if(!content) return alert("Content is required");
 
-        const response = await fetch('http://localhost:5000/api/v1/blogs/create', {
+        const response = await fetch('https://codsoft-blogger-api.vercel.app/api/v1/blogs/create', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -159,3 +167,41 @@ document.querySelector('.create-form').addEventListener('submit', function (even
     event.preventDefault();
     createBlog();
 });
+
+
+// Create Comment
+const addComment = async () => {
+    try {
+        const commentText = document.getElementById('comment-input').value;
+        const urlParams = new URLSearchParams(window.location.search);
+        const blogId = urlParams.get('blogId');
+
+        if (!commentText) return alert("Comment text is required");
+
+        const token = localStorage.getItem('token');
+        if (!token) return alert("Please login to add comment");
+
+        const response = await fetch('https://codsoft-blogger-api.vercel.app/api/v1/comments/add', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`,
+            },
+            body: JSON.stringify({text: commentText, blogId}),
+        });
+
+        if (response.ok) {
+            alert('Comment added successfully');
+            document.getElementById('comment-input').value = ''
+            location.reload();
+        } else {
+            const errorData = await response.json();
+            alert(`Error: ${errorData.message}`);
+        }
+    } catch (error) {
+        console.error('Error adding comment:', error.message);
+    }
+};
+
+const addCommentBtn = document.getElementById('add-comment-btn');
+addCommentBtn.addEventListener('click', addComment);

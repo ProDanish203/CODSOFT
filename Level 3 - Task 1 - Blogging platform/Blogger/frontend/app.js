@@ -81,7 +81,7 @@ const fetchAllBlogs = async () => {
                 <div class="blog-item-desc">${blog.content.slice(0, 200)}...</div>
                 <div class="blog-item-reaction">
                     <i class="fas fa-heart"></i>
-                    <span class="reaction-value">${blog.like.length}</span>
+                    <span class="reaction-value">10</span>
                 </div>
                 <div class="blog-item-tags">
                     
@@ -108,12 +108,20 @@ fetchAllBlogs();
 
 // Modal
 const createBtn = document.getElementById("create-btn");
+const createBtnMobile = document.getElementById("create-btn-sidebar");
 const modalLayer = document.getElementById("modal-layer");
 const closeModalBtn = document.getElementById("close-modal");
 
 closeModalBtn.addEventListener("click", () => modalLayer.classList.remove("open"))
 
 createBtn.addEventListener("click", () => {
+    if (modalLayer.classList.contains("open")) 
+    modalLayer.classList.remove("open");
+    else
+        modalLayer.classList.add("open")
+})
+
+createBtnMobile.addEventListener("click", () => {
     if (modalLayer.classList.contains("open")) 
     modalLayer.classList.remove("open");
     else
@@ -132,7 +140,7 @@ const createBlog = async () => {
         if(!title) return alert("Title is required");
         if(!content) return alert("Content is required");
 
-        const response = await fetch('http://localhost:5000/api/v1/blogs/create', {
+        const response = await fetch('https://codsoft-blogger-api.vercel.app/api/v1/blogs/create', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

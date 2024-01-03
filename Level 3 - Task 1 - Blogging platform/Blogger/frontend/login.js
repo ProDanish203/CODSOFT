@@ -18,7 +18,7 @@ window.onscroll = () =>{
 // Check for user if logged-in
 document.addEventListener('DOMContentLoaded', function () {
     const token = localStorage.getItem('token');
-    if (token) window.location.href = "/index.html"; 
+    if (token) window.location.href = "index.html"; 
 });
 
 // Authentication
@@ -44,7 +44,7 @@ const loginUser = async () => {
 
             localStorage.setItem('token', data.token);
             alert('Login successful');
-            window.location.href = '/index.html'; 
+            window.location.href = 'index.html'; 
 
         } else {
             const errorData = await response.json();

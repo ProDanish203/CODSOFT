@@ -26,10 +26,10 @@
                 <div class="navbar-links">
                     <ul class="nav-links" id="navbar-links">
                         <li class="nav-item">
-                            <a href="#home" class="nav-link">Home</a>
+                            <a href="index.html#home" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#blogs" class="nav-link">Blog</a>
+                            <a href="index.html#blogs" class="nav-link">Blog</a>
                         </li>
                         <li class="nav-item">
                             <a href="login.html" class="nav-link" id="loginNavItem">Login</a>
@@ -67,16 +67,16 @@
         </a>
         <ul class="sidebar-nav">
             <li class="nav-item">
-                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#home" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="index.html" class="nav-link">Blog</a>
+                <a href="index.html#blogs" class="nav-link">Blog</a>
             </li>
             <li class="nav-item">
                 <a href="login.html" class="nav-link">Login</a>
             </li>
             <li class="nav-item">
-                <button class="create-btn" id="create-btn">
+                <button class="create-btn" id="create-btn-sidebar">
                     <i class="fas fa-plus"></i>
                     <span>Create</span>
                 </button>
@@ -139,16 +139,17 @@
                         </div>
                         <h2 class="blog-title" id="blogTitle"></h2>
                         <p class="blog-desc" id="blogDesc"></p>
-                        <p class="author-name">Author: <span id="author-name">Danish siddiqui</span></p>
-                        <div class="blog-item-tags">
-                            <span>Popular tags: </span>
-                            <span class="blog-item-tag">Tag1</span>
-                            <span class="blog-item-tag">Tag2</span>
-                        </div>
+                        <p class="author-name">Author: <span id="author-name"></span></p>
                     </div>
                 
                     <div class="comments">
                         <h2 class="heading">Comments:</h2>
+
+                        <div class="comment-form" id="comment-form">
+                            <input type="text" placeholder="Add Comment..." id="comment-input" class="comment-input">
+
+                            <button class="add-comment-btn" id="add-comment-btn">Add</button>
+                        </div>
                 
                         <div class="blog-comment-list" id="commentsContainer"></div>
                     </div>

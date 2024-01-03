@@ -10,6 +10,6 @@ Level 2 - Task 1 - Tribute Page URL: https://prodanish203.github.io/CODSOFT/Leve
 
 Level 2 - Task 2 - Job Board URL:
 
-Level 3 - Task 1 - Blogging Platform URL:
+Level 3 - Task 1 - Blogging Platform URL: https://prodanish203.github.io/CODSOFT/Level%203%20-%20Task%201%20-%20Blogging%20platform/Blogger/frontend/
 
 Level 3 - Task 2 - Project Management Tool URL:
