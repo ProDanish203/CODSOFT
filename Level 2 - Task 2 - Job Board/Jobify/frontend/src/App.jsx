@@ -1,10 +1,19 @@
 import './App.css';
+import { Footer, Navbar } from './components/shared';
+import { Router } from "./config/Router";
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
-    <div className='text-5xl text-red-600'>
-      ashdjk
-    </div>
+  <>
+    <Toaster
+  position="top-center"
+  reverseOrder={false}
+  />
+  
+  <Router/>  
+  
+  </>
   );
 }
 
