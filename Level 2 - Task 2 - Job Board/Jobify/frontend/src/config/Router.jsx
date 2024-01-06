@@ -13,27 +13,27 @@ export const Router = () => {
         <Home/>
       </ProtectedRoute>
     }/>
-    <Route path='/browse' element={
+    <Route path='browse' element={
       <ProtectedRoute>
         <Job/>
       </ProtectedRoute>
     }/>
-    <Route path='/job' element={
+    <Route path='job' element={
       <ProtectedRoute>
         <JobDetail/>
       </ProtectedRoute>
     }/>
-    <Route path='/dashboard/*' element={
+    <Route path='dashboard/*' element={
       <ProtectedRoute>
         <Dashboard/>
       </ProtectedRoute>
     }/>
-    <Route path='/login' element={
+    <Route path='login' element={
       <PublicRoute>
         <Login/>
       </PublicRoute>
     }/>
-    <Route path='/register' element={
+    <Route path='register' element={
       <PublicRoute>
         <Register/>
       </PublicRoute>

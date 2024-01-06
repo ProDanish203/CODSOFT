@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Fragment } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Footer, Navbar } from '../components/shared';
 import axios from 'axios';
@@ -54,7 +54,12 @@ export const JobDetail = () => {
         <div className='md:mt-10 mt-4'>
             <h2 className='md:text-2xl text-xl font-extrabold'>Description</h2>
             <p className='max-w-4xl md:my-4 my-2 text-neutral-800'>
-            {job?.desc}
+            {job?.desc && job.desc.split('\n').map((line, index) => (
+                <React.Fragment key={index}>
+                {line}
+                <br />
+                </React.Fragment>
+            ))}
             </p>
 
             <h2 className='md:text-2xl text-xl font-extrabold mt-2'>Requirements</h2>
