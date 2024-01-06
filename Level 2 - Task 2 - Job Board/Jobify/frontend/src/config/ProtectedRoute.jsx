@@ -18,7 +18,6 @@ export const ProtectedRoute = ({children}) => {
                 },
             });
 
-            console.log(data.user)
             if(data.success){
                 dispatch(setUser(data.user))
             }else{
@@ -27,7 +26,7 @@ export const ProtectedRoute = ({children}) => {
             }
 
         }catch(error){
-            console.log(error.response.data.message);
+            console.log("something went wrong");
         }
     }
 

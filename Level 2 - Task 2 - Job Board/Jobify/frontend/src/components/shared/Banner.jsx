@@ -1,5 +1,6 @@
 import React from 'react'
 import { jobSearch } from "../../assets";
+import { Link } from 'react-router-dom';
 
 export const Banner = () => {
   return (
@@ -9,10 +10,10 @@ export const Banner = () => {
       <div className='col-1'>
         <h2 className='head-text md:text-6xl text-3xl font-extrabold text-text leading-10'>Empowering Careers, Connecting Futures: Jobify - Your Premier Job Search Platform for Employers and Candidates Alike!</h2>
 
-        <button className='bg-primary text-bg py-2 px-5 rounded-md mt-6 md:text-lg flex items-center justify-center gap-2 cursor-pointer hover:scale-105 md:max-w-[250px] md:w-full'>
+        <Link to="/browse" className='bg-primary text-bg py-2 px-5 rounded-md mt-6 md:text-lg flex items-center justify-center gap-2 cursor-pointer hover:scale-105 md:max-w-[250px] md:w-full'>
           <span>Browse </span>
           <i className='fas fa-magnifying-glass'></i>
-        </button>
+        </Link>
       </div>
 
       <div className='col-2 flex items-center justify-center'>

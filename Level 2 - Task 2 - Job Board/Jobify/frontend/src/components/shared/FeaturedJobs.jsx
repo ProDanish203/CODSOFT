@@ -1,46 +1,52 @@
-import React from 'react'
-import { Link } from "react-router-dom";
-
-const Card = () => {
-    return (
-    <>
-    <div className='bg-bg rounded-md shadow-md p-4 max-w-[350px]'
-    >
-      <div className='relative w-full'>
-      </div>
-
-      <div className='mb-2'>
-        <h2 className='text-para text-3xl font-extrabold'>Job Title</h2>
-        <p className='text-sm text-neutral-600 mt-1'>Listed by: xyz</p>
-        <p className='text-neutral-800 mt-2 max-md:text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, voluptatum doloribus nulla cupiditate a delectus vel voluptas ratione cum non!</p>
-      </div>
-
-      <div className='mt-4 block'>
-        <Link to="/" target="_blank" className='bg-accent md:text-lg font-bold block text-center w-full text-white py-2 rounded-md mt-2'>
-          View Deatils
-        </Link>
-      </div>
-    </div>
-    </>
-    )
-}
+import React, { useEffect, useState } from 'react'
+import { JobCard } from "../cards";
+import { MainLoader } from "../helpers";
+import axios from 'axios';
 
 export const FeaturedJobs = () => {
+
+  const [jobs, setJobs] = useState([]);
+  const [loader, setLoader] = useState(false);
+
+  const BASE_URL="http://localhost:5000";
+  const getJobs = async () => {
+    try{
+      setLoader(true);
+
+      const {data} = await axios.get(`${BASE_URL}/api/v1/job/allJobs`);
+      
+      if(data.success){
+        setJobs(data.jobs);
+      }
+    }catch(error){
+      console.log(error);
+    }finally{
+      setLoader(false);
+    }
+  }
+
+  useEffect(() => {
+    getJobs();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
-    <section className='md:px-20 sm:px-5 px-2 md:py-20 py-10'>
+    <section className='md:px-20 sm:px-5 px-2 md:py-20 py-10' id="featured">
 
         <h2 className='md:text-5xl text-3xl font-extrabold text-center'>Featured Jobs</h2>
 
+        {loader ? (
+          <MainLoader/>
+        ) : (
+
         <div className='mt-10 flex flex-wrap gap-10 justify-center items-center'>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
+        {jobs && jobs.length > 0 && 
+        jobs.map((item) => (
+          <JobCard data={item} key={item._id}/>
+          ))
+        }
         </div>
+        )}
 
     </section>
   )

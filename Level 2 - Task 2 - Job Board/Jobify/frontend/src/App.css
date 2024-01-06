@@ -71,6 +71,9 @@ img {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
+.arrow-hover:hover i{
+  margin-left: 5px;
+}
 
 /* Main Loader Style */
 .lds-ring {
@@ -86,10 +89,10 @@ img {
   width: 45px;
   height: 45px;
   margin: 8px;
-  border: 3px solid #fff;
+  border: 3px solid #111;
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #fff transparent transparent transparent;
+  border-color: #111 transparent transparent transparent;
   -webkit-animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
 .lds-ring div:nth-child(1) {
