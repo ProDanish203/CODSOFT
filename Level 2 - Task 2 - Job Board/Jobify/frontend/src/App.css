@@ -19,12 +19,11 @@ body{
   width: 100%;
 }
 :root {
-  --primary: #1d9bf0;
-  --text: #ffffff;
-  --bg: #000000;
-  --darkAccent: #16181c;
-  --whiteAccent: #eff3f4;
-  --placeholder: #696d72;
+  --primary: #5d33d3;
+  --secondary: #9677ef;
+  --accent: #7546fa;
+  --text: #0d0a15;
+  --bg: #f8f6fc;
 }
 img {
   user-select: none;
@@ -52,6 +51,26 @@ img {
   -o-border-radius: 5px;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  row-gap: 40px;
+}
+.row .col-1 {
+  flex: 1 1 450px;
+}
+.row .col-2 {
+  flex: 1 1 450px;
+}
+
+.head-text{
+  background: linear-gradient(to right, var(--primary), #cf23cf);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
 
 /* Main Loader Style */
 .lds-ring {
@@ -105,12 +124,15 @@ img {
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #111;
+  background: #fff;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+}
+.lds-ellipsis.dark div{
+  background: #111;
 }
 .lds-ellipsis div:nth-child(1) {
   left: 8px;

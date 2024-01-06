@@ -6,24 +6,24 @@ import { PublicRoute } from "./PublicRoute";
 
 export const Router = () => {
   return (
-    <>
-    <Routes>
-        <Route path='/*' element={
-          <ProtectedRoute>
-            <Home/>
-          </ProtectedRoute>
-        }/>
-        <Route path='/login' element={
-          <PublicRoute>
-            <Login/>
-          </PublicRoute>
-        }/>
-        <Route path='/register' element={
-          <PublicRoute>
-            <Register/>
-          </PublicRoute>
-        }/>
-    </Routes>
-    </>
+  <>
+  <Routes>
+    <Route path='/*' element={
+      <ProtectedRoute>
+        <Home/>
+      </ProtectedRoute>
+    }/>
+    <Route path='/login' element={
+      <PublicRoute>
+        <Login/>
+      </PublicRoute>
+    }/>
+    <Route path='/register' element={
+      <PublicRoute>
+        <Register/>
+      </PublicRoute>
+    }/>
+  </Routes>
+  </>
   )
 }
