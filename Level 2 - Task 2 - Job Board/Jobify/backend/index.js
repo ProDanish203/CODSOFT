@@ -9,6 +9,7 @@ import connDb from "./config/db.js";
 // Routes Imports
 import authRoute from "./routes/authRoute.js";
 import userRoute from "./routes/userRouter.js";
+import jobRoute from "./routes/jobRoute.js";
 // Middleware Imports
 import errorMiddleware from "./middlewares/errorMiddleware.js";
 // Security Imports
@@ -39,6 +40,7 @@ app.disable('x-powered-by')
 // Routes
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/user", userRoute);
+app.use("/api/v1/job", jobRoute);
 
 
 // Validation middleware

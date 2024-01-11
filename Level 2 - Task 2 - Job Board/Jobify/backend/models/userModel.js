@@ -7,6 +7,10 @@ const UserSchema = mongoose.Schema({
         required: [true, "Username is required"],
         unique: [true, "Username is taken, Please try another one"],
     },
+    name: {
+        type: String,
+        required: [true, "Name is required"],
+    },
     email: {
         type: String,
         required: [true, "Email is required"],
@@ -17,7 +21,24 @@ const UserSchema = mongoose.Schema({
         type: String,
         required: [true, "Password is required"],
         minlength: [6, "Password must be greater than 6 characters"],
-    }
+    },
+    role: {
+        type: String,
+        enum: ["employer", "candidate"],
+        required: [true, "Role is required"],
+    },
+    applications: [
+        {
+            type: mongoose.Types.ObjectId,
+            ref: "Application",
+        },
+    ],
+    postedJobs: [
+        {
+            type: mongoose.Types.ObjectId,
+            ref: "Job",
+        },
+    ],
 }, {timestamps: true });
 
-export default mongoose.model("user", UserSchema);
+export default mongoose.model("User", UserSchema);
