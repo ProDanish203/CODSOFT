@@ -1,6 +1,5 @@
 {
   "name": "frontend",
-  "homepage": "https://myusername.github.io/CODSOFT/tree/main/Level 2 - Task 2 - Job Board/Jobify/frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,7 +9,6 @@
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
     "axios": "^1.6.4",
-    "gh-pages": "^6.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
