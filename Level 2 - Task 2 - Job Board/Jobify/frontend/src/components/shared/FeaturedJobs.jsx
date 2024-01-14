@@ -8,7 +8,7 @@ export const FeaturedJobs = () => {
   const [jobs, setJobs] = useState([]);
   const [loader, setLoader] = useState(false);
 
-  const BASE_URL="http://localhost:5000";
+  const BASE_URL="https://codsoft-jobify-api.vercel.app";
   const getJobs = async () => {
     try{
       setLoader(true);

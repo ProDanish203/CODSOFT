@@ -17,7 +17,7 @@ export const Register = () => {
 
   const navigate = useNavigate();
 
-  const BASE_URL = "http://localhost:5000";
+  const BASE_URL = "https://codsoft-jobify-api.vercel.app";
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -56,7 +56,7 @@ export const Register = () => {
   <>
   <Navbar isAuth={true}/>
 
-  <main className='h-[78vh] flex items-center my-5 justify-center gap-2 flex-col'>
+  <main className='h-[85vh] flex items-center my-5 justify-center gap-2 flex-col'>
 
     <h3 className='md:text-5xl text-3xl font-extrabold'>Register</h3>
 

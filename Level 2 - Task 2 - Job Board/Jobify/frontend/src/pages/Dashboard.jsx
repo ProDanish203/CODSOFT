@@ -1,12 +1,23 @@
 import React from 'react'
 import { Footer, Navbar } from '../components/shared'
-import { Link, Navigate, Outlet, Route, Routes } from 'react-router-dom'
+import { Link, Navigate, Outlet, Route, Routes, useNavigate } from 'react-router-dom'
 import { Profile, Create, ReviewApplications, Applications } from './'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { setUser } from '../store/Reducers/Auth'
 
 export const Dashboard = () => {
 
   const {user} = useSelector(state => state.auth)
+  
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  
+  const logout = () => {
+    localStorage.removeItem('token');
+    dispatch(setUser(null));
+    navigate("/login");
+  }
+  
   if(!user) return <Navigate to='/login'/>
   return (
   <>
@@ -41,6 +52,11 @@ export const Dashboard = () => {
       </Link>
       </>
       )}
+
+      <div to="applications" onClick={logout} className='text-bg text-xl flex items-center max-md:justify-center gap-2 cursor-pointer'>
+        <i className='fas fa-right-from-bracket'></i>
+        <span className='max-md:hidden'>Logout</span>
+      </div>
 
     </aside>
     <Outlet/>

@@ -12,7 +12,7 @@ export const JobDetail = () => {
     const [loader, setLoader] = useState(false);
 
     const id = searchParams.get("id");
-    const BASE_URL="http://localhost:5000";
+    const BASE_URL="https://codsoft-jobify-api.vercel.app";
 
     const getData = async () => {
         try{

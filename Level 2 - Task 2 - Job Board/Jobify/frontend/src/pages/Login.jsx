@@ -13,7 +13,7 @@ export const Login = () => {
   const [loader, setLoader] = useState(false);
 
   const navigate = useNavigate();
-  const BASE_URL = "http://localhost:5000";
+  const BASE_URL = "https://codsoft-jobify-api.vercel.app";
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -44,7 +44,7 @@ export const Login = () => {
   <>
   <Navbar isAuth={true}/>
 
-  <main className='h-[80vh] flex items-center justify-center gap-2 flex-col'>
+  <main className='h-[88vh] flex items-center justify-center gap-2 flex-col'>
 
     <h3 className='md:text-5xl text-3xl font-extrabold'>Login</h3>
 

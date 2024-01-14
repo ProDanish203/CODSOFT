@@ -8,7 +8,7 @@ export const ProtectedRoute = ({children}) => {
 
     const {user} = useSelector(state => state.auth)
     const dispatch = useDispatch();
-    const BASE_URL = "http://localhost:5000";
+    const BASE_URL = "https://codsoft-jobify-api.vercel.app";
 
     const getUser = async () => {
         try{

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
+import { Loader } from '../components/helpers';
 
 export const Create = () => {
   
@@ -10,7 +11,7 @@ export const Create = () => {
   const [req, setReq] = useState("");
   const [requirements, setRequirements] = useState([]);
 
-  const BASE_URL="http://localhost:5000"
+  const BASE_URL="https://codsoft-jobify-api.vercel.app"
 
   const handleRequirementChange = (e) => {
     const textareaValue = e.target.value;
@@ -41,8 +42,6 @@ export const Create = () => {
       }else{
         toast.error(data.message);
       }
-
-      // console.log(requirements, desc, title)
 
     }catch(error){
       console.log(error)
@@ -79,12 +78,11 @@ export const Create = () => {
       onChange={handleRequirementChange}
       ></textarea>
 
-      <button disabled={loader} className='md:max-w-[200px] w-full md:text-lg bg-primary text-bg rounded-md py-2 cursor-pointer' type='submit'>List Job</button>
+      <button disabled={loader} className='md:max-w-[200px] w-full md:text-lg bg-primary text-bg rounded-md py-2 cursor-pointer' type='submit'>
+        {loader ? <Loader dark={false}/>: "List Job"}
+      </button>
 
     </form>
-
-  {/* Front End Developer */}
-  {/* need a front end developer */}
     </>
   )
 }
