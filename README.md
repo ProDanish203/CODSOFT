@@ -8,6 +8,6 @@ Level 1 - Task 3 - Calculator URL: https://prodanish203.github.io/CODSOFT/Level%
 
 Level 2 - Task 1 - Tribute Page URL: https://prodanish203.github.io/CODSOFT/Level%202%20-%20Task%201%20-%20Tribute%20Page/tribute-page/
 
-Level 2 - Task 2 - Job Board URL:
+Level 2 - Task 2 - Job Board URL: https://codsoft-jobify.vercel.app/
 
 Level 3 - Task 1 - Blogging Platform URL: https://prodanish203.github.io/CODSOFT/Level%203%20-%20Task%201%20-%20Blogging%20platform/Blogger/frontend/
